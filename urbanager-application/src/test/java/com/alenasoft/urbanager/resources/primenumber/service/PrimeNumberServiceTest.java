@@ -45,5 +45,33 @@ public class PrimeNumberServiceTest {
         boolean expected = false;
         assertThat(service.Prime(2)).isEqualTo(expected);
     }
+
+    @Test
+    public void testGetPrimeNumberIfNumberIsNegativeReturnFail() {
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        boolean expected = false;
+        assertThat(service.Prime(-3)).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGetPrimeNumberIfNumberIsNegativeReturnFail() {
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        boolean expected = false;
+        assertThat(service.Prime(-3)).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGetNPrimeNumbersIfZeroIsSent(){
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        int[] expected = {};
+        Assert.assertArrayEquals( expected, service.getNPrimeNumbers(0) );
+    }
+
+    @Test
+    public void testGetNPrimeNumbersIfFiveIsSentAsParameter(){
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        int[] expected = {2,3,5,7,11};
+        Assert.assertArrayEquals( expected, service.getNPrimeNumbers(5) );
+    }
 }
 
