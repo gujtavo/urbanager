@@ -19,9 +19,14 @@ public class PrimeNumberResource {
     @GET
     @UnitOfWork
     @Path("{num1}")
-    public String sumNumbers(@PathParam("num1") int num1) {
+    public String PrimeNumber(@PathParam("num1") int num1) {
         String data = this.service.check(num1);
         return data;
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public int[] NPrimeNumbers(@QueryParam("limite") int num2){
+        return this.service.getNPrimeNumbers(num2) ;
+    }
 }
