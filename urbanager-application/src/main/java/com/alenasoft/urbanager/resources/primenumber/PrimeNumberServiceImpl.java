@@ -1,6 +1,13 @@
 package com.alenasoft.urbanager.resources.primenumber;
 
+import com.alenasoft.urbanager.api.Result;
+
+import javax.inject.Inject;
+
 public class PrimeNumberServiceImpl implements PrimeNumberService {
+
+
+
 
     @Override
     public boolean Prime(int num) {
@@ -24,4 +31,7 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
         if ( Prime( num1 ) ) return "OK";
         return  "FAIL";
     }
+
+
+
 }

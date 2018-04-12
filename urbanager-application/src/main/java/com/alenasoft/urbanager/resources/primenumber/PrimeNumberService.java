@@ -7,4 +7,5 @@ public interface PrimeNumberService {
     String check( int num );
     //int[] getPrimeNumbers(int n);
 
+
 }
