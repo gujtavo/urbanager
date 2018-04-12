@@ -43,7 +43,7 @@ public class PrimeNumberServiceTest {
     public void testGetPrimeNumberAnalyzeIfNumberIsDivisibleByOneAndByItselfAndByOthersReturnsFalse() {
         PrimeNumberService service = new PrimeNumberServiceImpl();
         boolean expected = false;
-        assertThat(service.Prime(2)).isEqualTo(expected);
+        assertThat(service.Prime(8)).isEqualTo(expected);
     }
 
     @Test
