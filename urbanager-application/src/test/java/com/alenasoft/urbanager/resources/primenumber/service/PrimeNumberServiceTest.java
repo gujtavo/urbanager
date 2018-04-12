@@ -53,12 +53,6 @@ public class PrimeNumberServiceTest {
         assertThat(service.Prime(-3)).isEqualTo(expected);
     }
 
-    @Test
-    public void testGetPrimeNumberIfNumberIsNegativeReturnFail() {
-        PrimeNumberService service = new PrimeNumberServiceImpl();
-        boolean expected = false;
-        assertThat(service.Prime(-3)).isEqualTo(expected);
-    }
 
     @Test
     public void testGetNPrimeNumbersIfZeroIsSent(){
@@ -72,6 +66,12 @@ public class PrimeNumberServiceTest {
         PrimeNumberService service = new PrimeNumberServiceImpl();
         int[] expected = {2,3,5,7,11};
         Assert.assertArrayEquals( expected, service.getNPrimeNumbers(5) );
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetNPrimeNumbersIfNumberIsTooLargeDisplayError(){
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        service.getNPrimeNumbers(50000);
     }
 }
 

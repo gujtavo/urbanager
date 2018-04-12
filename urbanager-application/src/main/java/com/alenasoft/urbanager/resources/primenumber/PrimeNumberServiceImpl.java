@@ -33,5 +33,27 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
     }
 
 
+    @Override
+    public int[] getNPrimeNumbers(int number){
+
+        if(number <= 0){
+            return new int[]{};
+        }
+
+        int limit = 0;
+        int i = 1;
+
+        int[] PrimeNumbersList = new int[number];
+
+        while(limit != number){
+            if(Prime(i) == true){
+                PrimeNumbersList[limit] = i;
+                limit++;
+            }
+            i++;
+        }
+
+        return PrimeNumbersList;
+    }
 
 }

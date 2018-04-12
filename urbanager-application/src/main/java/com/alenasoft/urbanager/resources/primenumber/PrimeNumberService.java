@@ -5,7 +5,7 @@ import com.alenasoft.urbanager.api.Result;
 public interface PrimeNumberService {
     boolean Prime( int num );
     String check( int num );
-    //int[] getPrimeNumbers(int n);
+    int[] getNPrimeNumbers(int num);
 
 
 }
