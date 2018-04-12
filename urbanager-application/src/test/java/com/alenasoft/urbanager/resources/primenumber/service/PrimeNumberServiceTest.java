@@ -14,4 +14,34 @@ import org.mockito.Mockito;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PrimeNumberServiceTest {
+
+    @Test
+    public void testGetPrimeNumberIfNumberIsDivisibleByOneReturnsTrue() {
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        boolean expected = true;
+        assertThat(service.isPrime(3)).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGetPrimeNumberIfNumberIsDivisibleByOneAndByItselfReturnsTrue() {
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        boolean expected = true;
+        assertThat(service.isPrime(31)).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGetPrimeNumberIfNumberIsDivisibleByOneAndByItselfAndNotByOthersReturnsTrue() {
+            PrimeNumberService service = new PrimeNumberServiceImpl();
+            boolean expected = true;
+            assertThat(service.isPrime(2)).isEqualTo(expected);
+    }
+
+
+    @Test
+    public void testGetPrimeNumberAnalyzeIfNumberIsDivisibleByOneAndByItselfAndByOthersReturnsFalse() {
+        PrimeNumberService service = new PrimeNumberServiceImpl();
+        boolean expected = false;
+        assertThat(service.isPrime(2)).isEqualTo(expected);
+    }
 }
+
